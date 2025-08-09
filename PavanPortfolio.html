@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pavan Anand Bokka - UAT Lead & Technology Professional</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding-right: 0;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Fixed Profile Photo */
+        .profile-photo-fixed {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid #3498db;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            z-index: 1000;
+            background-color: #3498db;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .profile-photo-fixed img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .profile-photo-fixed:hover {
+            transform: scale(1.1);
+            border-color: #e74c3c;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.4);
+        }
+
+        .profile-photo-fixed::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #3498db, #e74c3c, #f39c12, #27ae60);
+            z-index: -1;
+            animation: rotate 3s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255,255,255,0.05) 10px,
+                rgba(255,255,255,0.05) 20px
+            );
+            animation: slide 20s linear infinite;
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(-50px); }
+            100% { transform: translateX(50px); }
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            width: 100%;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 3rem;
+        }
+
+        .header-text {
+            flex: 1;
+            text-align: left;
+        }
+
+        .header-image {
+            flex: 0 0 280px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-photo-header {
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            border: 6px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            background-color: #3498db;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-photo-header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .profile-photo-header::after {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3));
+            animation: shimmer 2s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        .profile-photo-header:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            background: linear-gradient(45deg, #fff, #e8f4fd);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: flex-start;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-item:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Enhanced Navigation */
+        nav {
+            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 0;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+
+        .nav-links li {
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 1.2rem 2rem;
+            display: block;
+            transition: all 0.3s ease;
+            position: relative;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            border-bottom: 3px solid transparent;
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            transition: width 0.3s ease;
+            z-index: -1;
+        }
+
+        .nav-links a:hover::before {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: white;
+            border-bottom-color: #e74c3c;
+            transform: translateY(-2px);
+        }
+
+        .nav-links a.active {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            border-bottom-color: #e74c3c;
+        }
+
+        /* Mobile Navigation */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 1rem;
+            position: absolute;
+            right: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-toggle:hover {
+            transform: rotate(90deg);
+            color: #3498db;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 968px) {
+            .nav-container {
+                padding: 0 1rem;
+                justify-content: flex-start;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+                right: 1rem;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+                flex-direction: column;
+                gap: 0;
+                padding: 0;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .nav-links li {
+                width: 100%;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+
+            .nav-links.active li {
+                transform: translateX(0);
+            }
+
+            .nav-links.active li:nth-child(1) { transition-delay: 0.1s; }
+            .nav-links.active li:nth-child(2) { transition-delay: 0.2s; }
+            .nav-links.active li:nth-child(3) { transition-delay: 0.3s; }
+            .nav-links.active li:nth-child(4) { transition-delay: 0.4s; }
+            .nav-links.active li:nth-child(5) { transition-delay: 0.5s; }
+            .nav-links.active li:nth-child(6) { transition-delay: 0.6s; }
+
+            .nav-links li:last-child {
+                border-bottom: none;
+            }
+
+            .nav-links a {
+                padding: 1.5rem 2rem;
+                border-bottom: none;
+                text-align: center;
+                border-left: 4px solid transparent;
+            }
+
+            .nav-links a:hover {
+                border-left-color: #3498db;
+                background: rgba(52, 152, 219, 0.1);
+                transform: none;
+            }
+        }
+
+        /* Main Content */
+        main {
+            padding: 3rem 2rem;
+            margin-right: 160px;
+        }
+
+        section {
+            margin-bottom: 4rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        section:nth-child(1) { animation-delay: 0.1s; }
+        section:nth-child(2) { animation-delay: 0.2s; }
+        section:nth-child(3) { animation-delay: 0.3s; }
+        section:nth-child(4) { animation-delay: 0.4s; }
+        section:nth-child(5) { animation-delay: 0.5s; }
+        section:nth-child(6) { animation-delay: 0.6s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            color: #2c3e50;
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #3498db, #e74c3c);
+            border-radius: 2px;
+        }
+
+        /* Professional Summary */
+        .summary {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border-left: 6px solid #3498db;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .summary::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 10rem;
+            color: rgba(52, 152, 219, 0.08);
+            font-family: Georgia, serif;
+        }
+
+        /* Enhanced Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid #e0e0e0;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .skill-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #3498db, #e74c3c, #f39c12, #27ae60);
+            transform: translateX(-100%);
+            transition: transform 0.4s ease;
+        }
+
+        .skill-category:hover::before {
+            transform: translateX(0);
+        }
+
+        .skill-category:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .skill-category h3 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #ecf0f1 0%, #d5dbdb 100%);
+            color: #2c3e50;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .skill-tag:hover {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            transform: scale(1.1);
+            border-color: #fff;
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        /* Enhanced Experience */
+        .experience-item, .project-item {
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+            margin-bottom: 2.5rem;
+            padding: 2.5rem;
+            border-radius: 15px;
+            border-left: 6px solid #3498db;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .experience-item::before, .project-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.05) 0%, rgba(231, 76, 60, 0.05) 100%);
+            transition: width 0.4s ease;
+        }
+
+        .experience-item:hover::before, .project-item:hover::before {
+            width: 100%;
+        }
+
+        .experience-item:hover, .project-item:hover {
+            transform: translateX(15px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            border-left-color: #e74c3c;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .job-title {
+            color: #2c3e50;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .company {
+            color: #7f8c8d;
+            font-style: italic;
+            font-size: 1.1rem;
+        }
+
+        .duration {
+            color: #e74c3c;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            box-shadow: 0 3px 10px rgba(253, 203, 110, 0.3);
+        }
+
+        .achievements {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .achievements li {
+            padding: 0.8rem 0;
+            padding-left: 2rem;
+            position: relative;
+            transition: all 0.3s ease;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        .achievements li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .achievements li:hover {
+            color: #2c3e50;
+            padding-left: 2.5rem;
+        }
+
+        .achievements li:hover::before {
+            color: #e74c3c;
+            transform: scale(1.3);
+        }
+
+        /* Enhanced Stats */
+        .stat {
+            color: #e74c3c;
+            font-weight: 700;
+            background: linear-gradient(135deg, rgba(231, 76, 60, 0.1) 0%, rgba(231, 76, 60, 0.2) 100%);
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            border: 1px solid rgba(231, 76, 60, 0.2);
+        }
+
+        /* Enhanced Awards */
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .award-item {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(240, 147, 251, 0.3);
+        }
+
+        .award-item::before {
+            content: '🏆';
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            font-size: 5rem;
+            opacity: 0.2;
+            animation: bounce 3s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+        }
+
+        .award-item:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 20px 50px rgba(240, 147, 251, 0.4);
+        }
+
+        .award-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .award-description {
+            opacity: 0.9;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        /* Enhanced Education */
+        .education-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+        }
+
+        .education-item::before {
+            content: '🎓';
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-size: 2.5rem;
+            opacity: 0.7;
+        }
+
+        .degree {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+        }
+
+        .institution {
+            opacity: 0.9;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .cgpa {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 1rem;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Enhanced Footer */
+        footer {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid transparent;
+        }
+
+        .footer-links a:hover {
+            background: #3498db;
+            transform: translateY(-3px);
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
+        }
+
+        /* Enhanced Scroll to Top */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 20px rgba(52, 152, 219, 0.3);
+            z-index: 998;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 30px rgba(52, 152, 219, 0.5);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .profile-photo-fixed {
+                width: 80px;
+                height: 80px;
+                right: 15px;
+                top: 15px;
+            }
+
+            .container {
+                margin: 0;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 2rem;
+                padding: 0 1rem;
+            }
+
+            .header-text {
+                text-align: center;
+            }
+
+            .header-image {
+                flex: none;
+            }
+
+            .profile-photo-header {
+                width: 200px;
+                height: 200px;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .contact-info {
+                justify-content: center;
+                gap: 1rem;
+            }
+
+            main {
+                padding: 2rem 1rem;
+                margin-right: 0;
+            }
+
+            .job-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .skills-grid, .awards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container loading">
+        <!-- Fixed Profile Photo -->
+        <div class="profile-photo-fixed">
+            <img src="pic.jpeg" alt="Pavan Anand Bokka Profile Photo" loading="lazy" onerror="this.style.display='none'">
+        </div>
+
+        <header>
+            <div class="header-content">
+                <div class="header-text">
+                    <h1>Pavan Anand Bokka</h1>
+                    <p class="subtitle">UAT Lead & Technology Professional</p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span>📍</span>
+                            <span>Hyderabad, India</span>
+                        </div>
+                        <div class="contact-item">
+                            <span>📞</span>
+                            <span>+91 9505543006</span>
+                        </div>
+                        <div class="contact-item">
+                            <span>✉️</span>
+                            <span>pavananand872@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <span>🔗</span>
+                            <a href="http://www.linkedin.com/in/pavanbokka" target="_blank">LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-image">
+                    <div class="profile-photo-header">
+                        <img src="pic.jpeg" alt="Pavan Anand Bokka Profile Photo" loading="lazy" onerror="this.style.display='none'">
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <nav>
+            <div class="nav-container">
+                <button class="mobile-menu-toggle" id="mobileToggle">☰</button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#summary" class="nav-link">Summary</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#awards" class="nav-link">Awards</a></li>
+                    <li><a href="#education" class="nav-link">Education</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <main>
+            <section id="summary">
+                <h2>Professional Summary</h2>
+                <div class="summary">
+                    Detail-oriented technology professional with <span class="stat">3+ years of experience</span> in <strong>UAT leadership, project coordination, cross-functional collaboration, and process optimization</strong> across technology and operations domains. Proven track record of delivering <span class="stat">100% on-time releases</span>, <span class="stat">0% escalation rates</span>, and process efficiencies of up to <span class="stat">40%</span> through automation and Lean/Six Sigma-based improvements. Adept at managing end-to-end testing cycles, gathering and refining requirements, and translating business needs into actionable technical solutions. Skilled in <strong>Agile/Scrum delivery</strong>, stakeholder reporting, and KPI tracking using <strong>Power BI, Tableau, SQL, and advanced Excel</strong>. Recognized for taking ownership, solving complex problems, and enabling smooth go-lives in high-pressure, multi-stakeholder environments.
+                </div>
+            </section>
+
+            <section id="skills">
+                <h2>Core Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Program Leadership</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Agile & Scrum</span>
+                            <span class="skill-tag">UAT Planning</span>
+                            <span class="skill-tag">Cross-Functional Collaboration</span>
+                            <span class="skill-tag">Requirement Gathering</span>
+                            <span class="skill-tag">End-to-End Delivery</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Process Excellence</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Lean/Six Sigma</span>
+                            <span class="skill-tag">Process Optimization</span>
+                            <span class="skill-tag">Defect Management</span>
+                            <span class="skill-tag">Risk Mitigation</span>
+                            <span class="skill-tag">Continuous Improvement</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Data & Reporting</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Power BI</span>
+                            <span class="skill-tag">Tableau</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">Advanced Excel</span>
+                            <span class="skill-tag">KPI Reporting</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Tools & Technology</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">JIRA</span>
+                            <span class="skill-tag">Confluence</span>
+                            <span class="skill-tag">Core Java</span>
+                            <span class="skill-tag">HTML/CSS</span>
+                            <span class="skill-tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="experience">
+                <h2>Professional Experience</h2>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">UAT Lead - Just Eat Take Away Project</div>
+                            <div class="company">Phenom, Hyderabad, India</div>
+                        </div>
+                        <div class="duration">Dec 2024 - Present</div>
+                    </div>
+                    <ul class="achievements">
+                        <li>Directed <span class="stat">end-to-end UAT lifecycle</span> for global food delivery platform, ensuring <span class="stat">100% readiness</span> for one-locale go-live and planning rollout to <span class="stat">12 locales within 3 months</span></li>
+                        <li>Improved defect turnaround by <span class="stat">25%</span> through JIRA dashboard automation and proactive issue triaging</li>
+                        <li>Built <span class="stat">real-time Power BI dashboards</span>, enhancing executive decision-making speed by <span class="stat">30%</span></li>
+                        <li>Delivered <span class="stat">0% escalation</span> rate and <span class="stat">100% on-time milestones</span>, earning recognition from client directors and senior leadership</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">UI Software Engineer</div>
+                            <div class="company">Phenom, Hyderabad, India</div>
+                        </div>
+                        <div class="duration">Aug 2024 - Dec 2024</div>
+                    </div>
+                    <ul class="achievements">
+                        <li>Resolved <span class="stat">250+ Jira tickets</span> in 4 months with <span class="stat">100% on-time delivery</span> and <span class="stat">0% escalation</span></li>
+                        <li>Reduced backlog by <span class="stat">35%</span> through targeted UI issue resolution in collaboration with product, QA, and engineering teams</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Module Lead - Quartz Survelines</div>
+                            <div class="company">Tata Consultancy Services (TCS), Chennai, India</div>
+                        </div>
+                        <div class="duration">Jan 2023 - Aug 2024</div>
+                    </div>
+                    <ul class="achievements">
+                        <li>Led module delivery for enterprise dashboards, reducing manual reporting time by <span class="stat">40%</span> via SQL automation</li>
+                        <li>Achieved <span class="stat">99% defect resolution</span> within sprint cycles by implementing Agile quality gates and proactive risk management</li>
+                        <li>Shortened client feedback loops by <span class="stat">20%</span> through early-stage UAT and production demos</li>
+                        <li>Awarded <span class="stat">On-the-Spot</span> and <span class="stat">Star of the Month</span> within first 8 months for high-impact delivery</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Developer</div>
+                            <div class="company">Tata Consultancy Services (TCS), Chennai, India</div>
+                        </div>
+                        <div class="duration">Feb 2022 - Jan 2023</div>
+                    </div>
+                    <ul class="achievements">
+                        <li>Built POJO classes integrated with SQL databases, improving query efficiency by <span class="stat">15%</span></li>
+                        <li>Maintained <span class="stat">99.9% database accuracy</span> across multiple production deployments</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Associate Engineer</div>
+                            <div class="company">T & AS, Hyderabad, India</div>
+                        </div>
+                        <div class="duration">Sep 2021 - Feb 2022</div>
+                    </div>
+                    <ul class="achievements">
+                        <li>Automated order processing with SQL queries, achieving <span class="stat">100% accuracy</span> and reducing processing time by <span class="stat">25%</span></li>
+                        <li>Delivered front-end enhancements in HTML, CSS, and JavaScript, improving UX metrics by <span class="stat">15%</span></li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="projects">
+                <h2>Key Projects</h2>
+                
+                <div class="project-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Just Eat Take Away - UAT & Multi-Locale Rollout</div>
+                            <div class="company">Phenom, 2024-2025</div>
+                        </div>
+                    </div>
+                    <ul class="achievements">
+                        <li>Managed <span class="stat">UAT strategy and execution</span> for global rollout; scaled US/EN locale into <span class="stat">12 new locales</span> in 3 months</li>
+                        <li>Increased defect resolution efficiency by <span class="stat">25%</span> through automated dashboards</li>
+                        <li>Maintained <span class="stat">0% escalation</span>, earning <span class="stat">client leadership recognition</span></li>
+                    </ul>
+                </div>
+
+                <div class="project-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Quartz Survelines - Dashboard Automation</div>
+                            <div class="company">TCS, 2023-2024</div>
+                        </div>
+                    </div>
+                    <ul class="achievements">
+                        <li>Automated KPI reporting, reducing manual effort by <span class="stat">40%</span></li>
+                        <li>Achieved <span class="stat">99% defect closure</span> rate by enforcing structured Agile sprint tracking</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="awards">
+                <h2>Awards & Recognition</h2>
+                <div class="awards-grid">
+                    <div class="award-item">
+                        <div class="award-title">Client & Leadership Recognition</div>
+                        <div class="award-description">For 0% escalation and 100% on-time delivery in Just Eat Take Away UAT Project (Phenom, 2024-2025)</div>
+                    </div>
+                    <div class="award-item">
+                        <div class="award-title">On-the-Spot Award</div>
+                        <div class="award-description">For exceptional stakeholder management and program delivery (TCS, 2023)</div>
+                    </div>
+                    <div class="award-item">
+                        <div class="award-title">Star of the Month</div>
+                        <div class="award-description">For 99% defect resolution and operational excellence in module delivery (TCS, 2023)</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="education">
+                <h2>Education</h2>
+                <div class="education-item">
+                    <div class="degree">M.Tech, Computer Science Engineering</div>
+                    <div class="institution">Pragati Engineering College, Surampalem, Kakinada</div>
+                    <div>2022 - 2024</div>
+                    <span class="cgpa">CGPA: 8.12</span>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-links">
+                <a href="mailto:pavananand872@gmail.com">Email</a>
+                <a href="http://www.linkedin.com/in/pavanbokka" target="_blank">LinkedIn</a>
+                <a href="tel:+919505543006">Call</a>
+            </div>
+            <p>&copy; 2025 Pavan Anand Bokka. All rights reserved.</p>
+        </footer>
+
+        <button class="scroll-top" onclick="scrollToTop()">↑</button>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    // Close mobile menu if open
+                    const navLinks = document.getElementById('navLinks');
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                    }
+                    
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mobile menu toggle function
+        document.getElementById('mobileToggle').addEventListener('click', function() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            const navLinks = document.getElementById('navLinks');
+            const mobileToggle = document.getElementById('mobileToggle');
+            
+            if (!navLinks.contains(e.target) && !mobileToggle.contains(e.target)) {
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // Scroll to top functionality
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Show/hide scroll to top button
+        window.addEventListener('scroll', function() {
+            const scrollTop = document.querySelector('.scroll-top');
+            if (window.pageYOffset > 300) {
+                scrollTop.classList.add('visible');
+            } else {
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        // Add loading animation to body
+        window.addEventListener('load', function() {
+            document.body.classList.add('loaded');
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Start typing effect after a delay
+        setTimeout(typeWriter, 1000);
+
+        // Add hover effects to skill tags
+        document.querySelectorAll('.skill-tag').forEach(tag => {
+            tag.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05) rotate(2deg)';
+            });
+            
+            tag.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1) rotate(0deg)';
+            });
+        });
+
+        // Add click effect to contact items
+        document.querySelectorAll('.contact-item').forEach(item => {
+            item.addEventListener('click', function() {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 150);
+            });
+        });
+
+        // Add counter animation for stats
+        function animateCounter(element, target, duration = 2000) {
+            let start = 0;
+            const increment = target / (duration / 16);
+            
+            function updateCounter() {
+                start += increment;
+                if (start < target) {
+                    element.textContent = Math.floor(start);
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    element.textContent = target;
+                }
+            }
+            updateCounter();
+        }
+
+        // Initialize counter animations when stats come into view
+        const statsObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statText = entry.target.textContent;
+                    const numbers = statText.match(/\d+/g);
+                    if (numbers) {
+                        // Animate the first number found
+                        const targetNumber = parseInt(numbers[0]);
+                        if (targetNumber > 1) {
+                            animateCounter(entry.target, targetNumber);
+                        }
+                    }
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        // Observe stat elements
+        document.querySelectorAll('.stat').forEach(stat => {
+            statsObserver.observe(stat);
+        });
+
+        // Add glitch effect to nav links on hover
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                let originalText = this.textContent;
+                let iterations = 0;
+                
+                const glitchInterval = setInterval(() => {
+                    this.textContent = originalText
+                        .split('')
+                        .map((char, index) => {
+                            if (index < iterations) {
+                                return originalText[index];
+                            }
+                            return String.fromCharCode(33 + Math.floor(Math.random() * 94));
+                        })
+                        .join('');
+                    
+                    if (iterations >= originalText.length) {
+                        clearInterval(glitchInterval);
+                        this.textContent = originalText;
+                    }
+                    
+                    iterations += 1/3;
+                }, 30);
+            });
+        });
+
+        // Add particle effect to header
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.style.position = 'absolute';
+            particle.style.width = '2px';
+            particle.style.height = '2px';
+            particle.style.background = 'rgba(255, 255, 255, 0.5)';
+            particle.style.borderRadius = '50%';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = '100%';
+            particle.style.pointerEvents = 'none';
+            particle.style.animation = 'float 6s linear infinite';
+            
+            document.querySelector('header').appendChild(particle);
+            
+            setTimeout(() => {
+                particle.remove();
+            }, 6000);
+        }
+
+        // Add CSS for particle animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes float {
+                to {
+                    transform: translateY(-100vh) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Create particles periodically
+        setInterval(createParticle, 500);
+
+        // Add progressive enhancement for reduced motion
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            // Disable animations for users who prefer reduced motion
+            const style = document.createElement('style');
+            style.textContent = `
+                *, *::before, *::after {
+                    animation-duration: 0.01ms !important;
+                    animation-iteration-count: 1 !important;
+                    transition-duration: 0.01ms !important;
+                }
+            `;
+            document.head.appendChild(style);
+        }
+
+        // Add keyboard navigation support
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Tab') {
+                document.body.classList.add('using-keyboard');
+            }
+        });
+
+        document.addEventListener('mousedown', function(e) {
+            document.body.classList.remove('using-keyboard');
+        });
+
+        // Add focus styles for keyboard navigation
+        const keyboardStyle = document.createElement('style');
+        keyboardStyle.textContent = `
+            .using-keyboard *:focus {
+                outline: 2px solid #3498db !important;
+                outline-offset: 2px !important;
+            }
+        `;
+        document.head.appendChild(keyboardStyle);
+
+        // Fixed profile photo click functionality
+        document.querySelector('.profile-photo-fixed').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
