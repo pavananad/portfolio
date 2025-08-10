@@ -14,17 +14,18 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: #2c3e50;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            padding-right: 0;
+            padding: 0;
+            overflow-x: hidden;
         }
 
         .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            background: white;
-            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+            width: 100vw;
+            margin: 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 50%, #f1f3f4 100%);
+            box-shadow: none;
             min-height: 100vh;
             position: relative;
         }
@@ -37,13 +38,17 @@
             width: 120px;
             height: 120px;
             border-radius: 50%;
-            border: 4px solid #3498db;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            border: 4px solid #e74c3c;
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
             z-index: 1000;
-            background-color: #3498db;
+            background-color: #e74c3c;
             transition: all 0.3s ease;
             cursor: pointer;
             overflow: hidden;
+        }
+
+        .profile-name{
+            color: #ffff;
         }
 
         .profile-photo-fixed img {
@@ -55,8 +60,8 @@
 
         .profile-photo-fixed:hover {
             transform: scale(1.1);
-            border-color: #e74c3c;
-            box-shadow: 0 12px 35px rgba(0,0,0,0.4);
+            border-color: #27ae60;
+            box-shadow: 0 12px 35px rgba(39, 174, 96, 0.5);
         }
 
         .profile-photo-fixed::after {
@@ -67,7 +72,7 @@
             right: -2px;
             bottom: -2px;
             border-radius: 50%;
-            background: linear-gradient(45deg, #3498db, #e74c3c, #f39c12, #27ae60);
+            background: linear-gradient(45deg, #e74c3c, #27ae60, #f39c12, #9b59b6);
             z-index: -1;
             animation: rotate 3s linear infinite;
         }
@@ -79,7 +84,7 @@
 
         /* Header */
         header {
-            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
             color: white;
             padding: 3rem 0;
             text-align: center;
@@ -89,6 +94,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            width: 100%;
         }
 
         header::before {
@@ -98,13 +104,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: repeating-linear-gradient(
-                45deg,
-                transparent,
-                transparent 10px,
-                rgba(255,255,255,0.05) 10px,
-                rgba(255,255,255,0.05) 20px
-            );
+            background: url('bgimg.jpg');
             animation: slide 20s linear infinite;
         }
 
@@ -141,9 +141,9 @@
             width: 260px;
             height: 260px;
             border-radius: 50%;
-            border: 6px solid rgba(255, 255, 255, 0.3);
+            border: 6px solid rgba(231, 76, 60, 0.6);
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-            background-color: #3498db;
+            background-color: #e74c3c;
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
@@ -154,18 +154,6 @@
             height: 100%;
             object-fit: cover;
             object-position: center;
-        }
-
-        .profile-photo-header::after {
-            content: '';
-            position: absolute;
-            top: -3px;
-            left: -3px;
-            right: -3px;
-            bottom: -3px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3));
-            animation: shimmer 2s ease-in-out infinite;
         }
 
         @keyframes shimmer {
@@ -181,6 +169,7 @@
         h1 {
             font-size: 3rem;
             margin-bottom: 0.5rem;
+            width: 450px !important;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
             background: linear-gradient(45deg, #fff, #e8f4fd);
             -webkit-background-clip: text;
@@ -209,14 +198,13 @@
             transition: all 0.3s ease;
             padding: 0.5rem 1rem;
             border-radius: 25px;
-            background: rgba(255, 255, 255, 0.1);
+            background: #34495e;
             backdrop-filter: blur(10px);
         }
 
         .contact-item:hover {
             transform: translateY(-3px);
-            background: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
         }
 
         .contact-item a {
@@ -226,16 +214,17 @@
 
         /* Enhanced Navigation */
         nav {
-            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             padding: 0;
             position: sticky;
             top: 0;
             z-index: 999;
             box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            width: 100%;
         }
 
         .nav-container {
-            max-width: 1400px;
+            max-width: 100%;
             margin: 0 auto;
             padding: 0 2rem;
             display: flex;
@@ -280,7 +269,7 @@
             left: 0;
             width: 0;
             height: 100%;
-            background: linear-gradient(135deg, #3498db, #2980b9);
+            background: linear-gradient(135deg, #4e4646, #14a0ba);
             transition: width 0.3s ease;
             z-index: -1;
         }
@@ -291,13 +280,13 @@
 
         .nav-links a:hover {
             color: white;
-            border-bottom-color: #e74c3c;
+            border-bottom-color: #27ae60;
             transform: translateY(-2px);
         }
 
         .nav-links a.active {
-            background: linear-gradient(135deg, #3498db, #2980b9);
-            border-bottom-color: #e74c3c;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            border-bottom-color: #27ae60;
         }
 
         /* Mobile Navigation */
@@ -316,7 +305,7 @@
 
         .mobile-menu-toggle:hover {
             transform: rotate(90deg);
-            color: #3498db;
+            color: #e74c3c;
         }
 
         /* Mobile Styles */
@@ -383,8 +372,8 @@
             }
 
             .nav-links a:hover {
-                border-left-color: #3498db;
-                background: rgba(52, 152, 219, 0.1);
+                border-left-color: #e74c3c;
+                background: rgba(231, 76, 60, 0.1);
                 transform: none;
             }
         }
@@ -392,7 +381,9 @@
         /* Main Content */
         main {
             padding: 3rem 2rem;
-            margin-right: 160px;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
         }
 
         section {
@@ -417,9 +408,10 @@
         }
 
         h2 {
-            color: #2c3e50;
-            font-size: 2.2rem;
-            margin-bottom: 2rem;
+            color: #34495e;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
             position: relative;
             padding-bottom: 1rem;
         }
@@ -428,171 +420,411 @@
             content: '';
             position: absolute;
             bottom: 0;
-            left: 0;
-            width: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
             height: 4px;
-            background: linear-gradient(90deg, #3498db, #e74c3c);
+            background: linear-gradient(90deg, #e74c3c, #27ae60);
             border-radius: 2px;
         }
 
-        /* Professional Summary */
-        .summary {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            padding: 2.5rem;
-            border-radius: 15px;
-            border-left: 6px solid #3498db;
-            font-size: 1.15rem;
+        .stat {
+            color: #27ae60;
+            font-weight: 700;
+            background: linear-gradient(135deg, rgba(39, 174, 96, 0.1) 0%, rgba(39, 174, 96, 0.2) 100%);
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            border: 1px solid rgba(39, 174, 96, 0.3);
+        }
+
+        /* Enhanced Professional Summary */
+        .summary-showcase {
+            margin-bottom: 4rem;
+        }
+
+        .summary-enhanced {
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+            padding: 3rem;
+            border-radius: 25px;
+            border-left: 8px solid #e74c3c;
+            font-size: 1.2rem;
             line-height: 1.8;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 40px rgba(231, 76, 60, 0.2);
+            border: 2px solid transparent;
+            transition: all 0.4s ease;
         }
 
-        .summary::before {
+        .summary-enhanced::before {
             content: '"';
             position: absolute;
-            top: -20px;
-            left: 20px;
-            font-size: 10rem;
-            color: rgba(52, 152, 219, 0.08);
+            top: -30px;
+            left: 30px;
+            font-size: 12rem;
+            color: rgba(231, 76, 60, 0.08);
             font-family: Georgia, serif;
         }
 
-        /* Enhanced Skills */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+        .summary-enhanced:hover {
+            border-color: #e74c3c;
+            box-shadow: 0 25px 60px rgba(231, 76, 60, 0.3);
+            transform: translateY(-5px);
         }
 
-        .skill-category {
+        /* Enhanced Skills Section */
+        .skills-showcase {
+            margin-bottom: 4rem;
+        }
+
+        .skills-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(295px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .skill-showcase-item {
             background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
-            padding: 2rem;
-            border-radius: 15px;
-            border: 1px solid #e0e0e0;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border: 2px solid transparent;
         }
 
-        .skill-category::before {
+        .skill-showcase-item::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
+            right: 0;
             height: 5px;
-            background: linear-gradient(90deg, #3498db, #e74c3c, #f39c12, #27ae60);
+            background: linear-gradient(90deg, #e74c3c, #27ae60, #f39c12, #9b59b6);
             transform: translateX(-100%);
             transition: transform 0.4s ease;
         }
 
-        .skill-category:hover::before {
+        .skill-showcase-item:hover::before {
             transform: translateX(0);
         }
 
-        .skill-category:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        .skill-showcase-item:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 20px 50px rgba(52, 73, 94, 0.2);
+            border-color: #e74c3c;
         }
 
-        .skill-category h3 {
-            color: #2c3e50;
+        .skill-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
             margin-bottom: 1.5rem;
-            font-size: 1.3rem;
-            font-weight: 600;
+            transition: all 0.3s ease;
         }
 
-        .skill-tags {
+        .skill-showcase-item:hover .skill-icon {
+            transform: rotate(360deg) scale(1.1);
+            box-shadow: 0 10px 30px rgba(231, 76, 60, 0.4);
+        }
+
+        .skill-showcase-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #34495e;
+            margin-bottom: 1rem;
+        }
+
+        .skill-showcase-description {
+            color: #7f8c8d;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .skill-tags-enhanced {
             display: flex;
             flex-wrap: wrap;
             gap: 0.8rem;
         }
 
-        .skill-tag {
-            background: linear-gradient(135deg, #ecf0f1 0%, #d5dbdb 100%);
-            color: #2c3e50;
+        .skill-tag-enhanced {
+            background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%);
+            color: white;
             padding: 0.5rem 1rem;
             border-radius: 25px;
             font-size: 0.9rem;
             font-weight: 500;
             transition: all 0.3s ease;
             border: 2px solid transparent;
+            cursor: pointer;
         }
 
-        .skill-tag:hover {
-            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
-            color: white;
-            transform: scale(1.1);
-            border-color: #fff;
-            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        .skill-tag-enhanced:hover {
+            background: #34495e;
+            transform: scale(1.15) rotate(5deg);
+            border-color: #e74c3c;
+            box-shadow: 0 8px 20px rgba(52, 73, 94, 0.5);
         }
 
-        /* Enhanced Experience */
-        .experience-item, .project-item {
-            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
-            margin-bottom: 2.5rem;
-            padding: 2.5rem;
-            border-radius: 15px;
-            border-left: 6px solid #3498db;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            transition: all 0.4s ease;
+        /* Enhanced Experience Section */
+        .experience-showcase {
+            margin-bottom: 4rem;
+        }
+
+        .experience-timeline {
+            display: grid;
+            gap: 3rem;
             position: relative;
-            overflow: hidden;
         }
 
-        .experience-item::before, .project-item::before {
+        .experience-timeline::before {
             content: '';
             position: absolute;
+            left: 50%;
             top: 0;
-            right: 0;
-            width: 0;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(52, 152, 219, 0.05) 0%, rgba(231, 76, 60, 0.05) 100%);
-            transition: width 0.4s ease;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, #e74c3c, #27ae60, #f39c12, #9b59b6);
+            transform: translateX(-50%);
         }
 
-        .experience-item:hover::before, .project-item:hover::before {
-            width: 100%;
+        .experience-showcase-item {
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            border: 2px solid transparent;
+            margin-left: 2rem;
+            margin-right: 2rem;
         }
 
-        .experience-item:hover, .project-item:hover {
-            transform: translateX(15px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-            border-left-color: #e74c3c;
+        .experience-showcase-item:nth-child(even) {
+            margin-left: 50%;
+            margin-right: 0;
         }
 
-        .job-header {
+        .experience-showcase-item:nth-child(odd) {
+            margin-right: 50%;
+            margin-left: 0;
+        }
+
+        .experience-showcase-item::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 20px;
+            height: 20px;
+            background: #e74c3c;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 0 4px #e74c3c;
+            transform: translateY(-50%);
+            transition: all 0.3s ease;
+        }
+
+        .experience-showcase-item:nth-child(odd)::after {
+            right: -45px;
+        }
+
+        .experience-showcase-item:nth-child(even)::after {
+            left: -45px;
+        }
+
+        .experience-showcase-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 50px rgba(52, 73, 94, 0.2);
+            border-color: #e74c3c;
+        }
+
+        .experience-showcase-item:hover::after {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { 
+                box-shadow: 0 0 0 4px #e74c3c, 0 0 0 0 rgba(231, 76, 60, 0.7);
+                transform: translateY(-50%) scale(1);
+            }
+            50% { 
+                box-shadow: 0 0 0 4px #e74c3c, 0 0 0 10px rgba(231, 76, 60, 0);
+                transform: translateY(-50%) scale(1.1);
+            }
+        }
+
+        .experience-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
             margin-bottom: 1.5rem;
+            gap: 2rem;
             flex-wrap: wrap;
-            gap: 1rem;
         }
 
-        .job-title {
-            color: #2c3e50;
-            font-size: 1.4rem;
+        .experience-title {
+            font-size: 1.5rem;
             font-weight: 700;
-            margin-bottom: 0.3rem;
+            color: #34495e;
+            margin-bottom: 0.5rem;
         }
 
-        .company {
+        .experience-company {
             color: #7f8c8d;
             font-style: italic;
             font-size: 1.1rem;
         }
 
-        .duration {
-            color: #e74c3c;
+        .experience-duration {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
             font-weight: 600;
-            padding: 0.5rem 1rem;
-            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
-            border-radius: 20px;
             font-size: 0.9rem;
-            box-shadow: 0 3px 10px rgba(253, 203, 110, 0.3);
+            box-shadow: 0 5px 15px rgba(243, 156, 18, 0.3);
+            white-space: nowrap;
+        }
+
+        .experience-achievements {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .experience-achievements li {
+            padding: 1rem 0;
+            padding-left: 2.5rem;
+            position: relative;
+            border-bottom: 1px solid rgba(189, 195, 199, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .experience-achievements li:last-child {
+            border-bottom: none;
+        }
+
+        .experience-achievements li::before {
+            content: '🚀';
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .experience-achievements li:hover {
+            background: rgba(231, 76, 60, 0.05);
+            border-radius: 10px;
+            padding-left: 3rem;
+        }
+
+        .experience-achievements li:hover::before {
+            transform: scale(1.3) rotate(15deg);
+        }
+
+        /* Project Images Gallery */
+        .project-gallery {
+            margin-top: 3rem;
+            padding: 2.5rem;
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+            border-radius: 15px;
+            border: 1px solid #e9ecef;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .project-gallery h3 {
+            color: #34495e;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 30px;
+        }
+
+        .gallery-item {
+            background: linear-gradient(135deg, #fff 0%, #ecf0f1 100%);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border: 2px solid transparent;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(52, 73, 94, 0.2);
+            border-color: #e74c3c;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 300px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-image img {
+            transform: scale(1.1);
+        }
+
+        .gallery-content {
+            padding: 1.5rem;
+        }
+
+        .gallery-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #34495e;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-description {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            line-height: 1.5;
+        }
+
+        .project-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .project-skill {
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .project-skill:hover {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 3px 10px rgba(231, 76, 60, 0.3);
         }
 
         .achievements {
@@ -613,130 +845,178 @@
             content: '▶';
             position: absolute;
             left: 0;
-            color: #3498db;
+            color: #e74c3c;
             font-size: 1.2rem;
             transition: all 0.3s ease;
         }
 
         .achievements li:hover {
-            color: #2c3e50;
+            color: #34495e;
             padding-left: 2.5rem;
         }
 
         .achievements li:hover::before {
-            color: #e74c3c;
+            color: #27ae60;
             transform: scale(1.3);
         }
 
-        /* Enhanced Stats */
-        .stat {
-            color: #e74c3c;
-            font-weight: 700;
-            background: linear-gradient(135deg, rgba(231, 76, 60, 0.1) 0%, rgba(231, 76, 60, 0.2) 100%);
-            padding: 0.3rem 0.6rem;
-            border-radius: 6px;
-            border: 1px solid rgba(231, 76, 60, 0.2);
+        /* Enhanced Awards Section */
+        .awards-showcase {
+            margin-bottom: 4rem;
         }
 
-        /* Enhanced Awards */
-        .awards-grid {
+        .awards-gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
         }
 
-        .award-item {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        .award-showcase-item {
+            background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
             color: white;
-            padding: 2.5rem;
-            border-radius: 20px;
+            padding: 3rem 2.5rem;
+            border-radius: 25px;
             text-align: center;
             position: relative;
             overflow: hidden;
             transition: all 0.4s ease;
-            box-shadow: 0 10px 30px rgba(240, 147, 251, 0.3);
+            box-shadow: 0 15px 40px rgba(155, 89, 182, 0.3);
+            border: 3px solid transparent;
         }
 
-        .award-item::before {
-            content: '🏆';
+        .award-showcase-item::before {
+            content: '';
             position: absolute;
-            top: -30px;
-            right: -30px;
-            font-size: 5rem;
-            opacity: 0.2;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+            opacity: 0;
+        }
+
+        .award-showcase-item:hover::before {
+            animation: shimmer 1.5s ease-in-out;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) rotate(45deg); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateX(100%) rotate(45deg); opacity: 0; }
+        }
+
+        .award-showcase-item:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 25px 60px rgba(155, 89, 182, 0.5);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .award-trophy {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
             animation: bounce 3s ease-in-out infinite;
         }
 
         @keyframes bounce {
             0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-15px) rotate(5deg); }
+            50% { transform: translateY(-10px) rotate(5deg); }
         }
 
-        .award-item:hover {
-            transform: scale(1.05) rotate(2deg);
-            box-shadow: 0 20px 50px rgba(240, 147, 251, 0.4);
-        }
-
-        .award-title {
-            font-size: 1.3rem;
+        .award-showcase-title {
+            font-size: 1.4rem;
             font-weight: 700;
             margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
-        .award-description {
-            opacity: 0.9;
-            font-size: 1.05rem;
+        .award-showcase-description {
+            opacity: 0.95;
+            font-size: 1rem;
             line-height: 1.6;
         }
 
-        /* Enhanced Education */
-        .education-item {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        /* Enhanced Education Section */
+        .education-showcase {
+            margin-bottom: 4rem;
+        }
+
+        .education-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .education-showcase-item {
+            background: linear-gradient(135deg, #16a085 0%, #1abc9c 100%);
             color: white;
-            padding: 2.5rem;
-            border-radius: 20px;
+            padding: 3rem;
+            border-radius: 25px;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 15px 40px rgba(22, 160, 133, 0.3);
+            transition: all 0.4s ease;
+            border: 3px solid transparent;
         }
 
-        .education-item::before {
-            content: '🎓';
+        .education-showcase-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(22, 160, 133, 0.5);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .education-icon {
             position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            font-size: 2.5rem;
+            top: 2rem;
+            right: 2rem;
+            font-size: 3rem;
             opacity: 0.7;
+            transition: all 0.3s ease;
         }
 
-        .degree {
-            font-size: 1.6rem;
+        .education-showcase-item:hover .education-icon {
+            transform: rotate(15deg) scale(1.2);
+            opacity: 1;
+        }
+
+        .education-degree {
+            font-size: 1.8rem;
             font-weight: 700;
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
-        .institution {
+        .education-institution {
             opacity: 0.9;
-            margin-bottom: 0.8rem;
-            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            line-height: 1.4;
         }
 
-        .cgpa {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
+        .education-duration {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .education-cgpa {
+            background: rgba(255, 255, 255, 0.25);
+            padding: 1rem 2rem;
+            border-radius: 25px;
             display: inline-block;
-            margin-top: 1rem;
             font-weight: 600;
             backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            font-size: 1.1rem;
         }
 
         /* Enhanced Footer */
         footer {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
             color: white;
             text-align: center;
             padding: 3rem 2rem;
+            width: 100%;
         }
 
         .footer-links {
@@ -752,16 +1032,16 @@
             transition: all 0.3s ease;
             padding: 1rem 2rem;
             border-radius: 25px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(231, 76, 60, 0.2);
             backdrop-filter: blur(10px);
             border: 2px solid transparent;
         }
 
         .footer-links a:hover {
-            background: #3498db;
+            background: #e74c3c;
             transform: translateY(-3px);
             border-color: rgba(255, 255, 255, 0.3);
-            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
         }
 
         /* Enhanced Scroll to Top */
@@ -769,7 +1049,7 @@
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
             color: white;
             border: none;
             padding: 1rem;
@@ -779,7 +1059,7 @@
             opacity: 0;
             visibility: hidden;
             font-size: 1.2rem;
-            box-shadow: 0 5px 20px rgba(52, 152, 219, 0.3);
+            box-shadow: 0 5px 20px rgba(231, 76, 60, 0.4);
             z-index: 998;
         }
 
@@ -789,9 +1069,9 @@
         }
 
         .scroll-top:hover {
-            background: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
+            background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);
             transform: translateY(-5px) scale(1.1);
-            box-shadow: 0 10px 30px rgba(52, 152, 219, 0.5);
+            box-shadow: 0 10px 30px rgba(231, 76, 60, 0.6);
         }
 
         /* Responsive Design */
@@ -805,6 +1085,7 @@
 
             .container {
                 margin: 0;
+                width: 100vw;
             }
 
             .header-content {
@@ -829,6 +1110,7 @@
 
             h1 {
                 font-size: 2.2rem;
+                width: auto !important;
             }
 
             .contact-info {
@@ -838,23 +1120,100 @@
 
             main {
                 padding: 2rem 1rem;
-                margin-right: 0;
             }
 
-            .job-header {
-                flex-direction: column;
-                gap: 0.5rem;
+            h2 {
+                font-size: 2rem;
             }
 
-            .skills-grid, .awards-grid {
+            .skills-gallery,
+            .awards-gallery,
+            .education-gallery {
                 grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .experience-timeline::before {
+                left: 2rem;
+            }
+
+            .experience-showcase-item {
+                margin-left: 4rem !important;
+                margin-right: 1rem !important;
+            }
+
+            .experience-showcase-item::after {
+                left: -45px !important;
+                right: auto !important;
+            }
+
+            .experience-header {
+                flex-direction: column;
+                gap: 1rem;
             }
 
             .footer-links {
                 flex-direction: column;
                 gap: 1rem;
             }
+
+            .skill-showcase-item,
+            .award-showcase-item,
+            .education-showcase-item {
+                padding: 2rem 1.5rem;
+            }
+
+            .skill-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+
+            .award-trophy {
+                font-size: 3rem;
+            }
+
+            .education-icon {
+                font-size: 2.5rem;
+                top: 1.5rem;
+                right: 1.5rem;
+            }
         }
+
+        /* Large screen optimizations */
+        @media (min-width: 1200px) {
+            main {
+                padding: 4rem 3rem;
+            }
+            
+            .header-content {
+                max-width: none;
+                padding: 0 3rem;
+            }
+            
+            .nav-container {
+                padding: 0 3rem;
+            }
+        }
+
+        /* Animation delays for staggered loading */
+        .skill-showcase-item:nth-child(1) { animation-delay: 0.1s; }
+        .skill-showcase-item:nth-child(2) { animation-delay: 0.2s; }
+        .skill-showcase-item:nth-child(3) { animation-delay: 0.3s; }
+        .skill-showcase-item:nth-child(4) { animation-delay: 0.4s; }
+
+        .experience-showcase-item:nth-child(1) { animation-delay: 0.1s; }
+        .experience-showcase-item:nth-child(2) { animation-delay: 0.3s; }
+        .experience-showcase-item:nth-child(3) { animation-delay: 0.5s; }
+        .experience-showcase-item:nth-child(4) { animation-delay: 0.7s; }
+        .experience-showcase-item:nth-child(5) { animation-delay: 0.9s; }
+
+        .award-showcase-item:nth-child(1) { animation-delay: 0.2s; }
+        .award-showcase-item:nth-child(2) { animation-delay: 0.4s; }
+        .award-showcase-item:nth-child(3) { animation-delay: 0.6s; }
 
         /* Loading Animation */
         .loading {
@@ -864,6 +1223,104 @@
 
         @keyframes fadeIn {
             to { opacity: 1; }
+        }
+
+        /* Particle animation styles */
+        @keyframes floatUp {
+            to {
+                transform: translateY(-100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes spin {
+            from { transform: rotate(0deg) scale(1); }
+            to { transform: rotate(360deg) scale(1.2); }
+        }
+
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            .skill-showcase-item,
+            .experience-showcase-item,
+            .summary-enhanced,
+            .project-gallery,
+            .gallery-item {
+                background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+                color: #ecf0f1;
+                border-color: #e74c3c;
+            }
+            
+            .skill-showcase-title,
+            .experience-title,
+            .gallery-title {
+                color: #ecf0f1;
+            }
+            
+            .skill-showcase-description,
+            .experience-company,
+            .gallery-description {
+                color: #bdc3c7;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white !important;
+            }
+            
+            .skill-showcase-item,
+            .experience-showcase-item,
+            .award-showcase-item,
+            .education-showcase-item,
+            .summary-enhanced {
+                box-shadow: none !important;
+                border: 2px solid #e74c3c !important;
+                break-inside: avoid;
+                margin-bottom: 1rem;
+            }
+            
+            .skill-icon,
+            .award-trophy,
+            .education-icon {
+                print-color-adjust: exact;
+            }
+        }
+
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            .skill-showcase-item,
+            .experience-showcase-item,
+            .award-showcase-item,
+            .education-showcase-item,
+            .summary-enhanced {
+                border: 3px solid #000 !important;
+                background: #fff !important;
+                color: #000 !important;
+            }
+            
+            .skill-tag-enhanced {
+                background: #000 !important;
+                color: #fff !important;
+                border: 2px solid #000 !important;
+            }
+        }
+
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* Keyboard navigation styles */
+        .using-keyboard *:focus {
+            outline: 3px solid #e74c3c !important;
+            outline-offset: 2px !important;
+            border-radius: 5px;
         }
     </style>
 </head>
@@ -877,7 +1334,7 @@
         <header>
             <div class="header-content">
                 <div class="header-text">
-                    <h1>Pavan Anand Bokka</h1>
+                    <h1 class="profile-name">Pavan Anand Bokka</h1>
                     <p class="subtitle">UAT Lead & Technology Professional</p>
                     <div class="contact-info">
                         <div class="contact-item">
@@ -921,193 +1378,308 @@
         </nav>
 
         <main>
-            <section id="summary">
-                <h2>Professional Summary</h2>
-                <div class="summary">
+            <!-- Enhanced Professional Summary -->
+            <section id="summary" class="summary-showcase">
+                <h2>🎯 Professional Summary</h2>
+                <div class="summary-enhanced">
                     Detail-oriented technology professional with <span class="stat">3+ years of experience</span> in <strong>UAT leadership, project coordination, cross-functional collaboration, and process optimization</strong> across technology and operations domains. Proven track record of delivering <span class="stat">100% on-time releases</span>, <span class="stat">0% escalation rates</span>, and process efficiencies of up to <span class="stat">40%</span> through automation and Lean/Six Sigma-based improvements. Adept at managing end-to-end testing cycles, gathering and refining requirements, and translating business needs into actionable technical solutions. Skilled in <strong>Agile/Scrum delivery</strong>, stakeholder reporting, and KPI tracking using <strong>Power BI, Tableau, SQL, and advanced Excel</strong>. Recognized for taking ownership, solving complex problems, and enabling smooth go-lives in high-pressure, multi-stakeholder environments.
                 </div>
             </section>
 
-            <section id="skills">
-                <h2>Core Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>Program Leadership</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Agile & Scrum</span>
-                            <span class="skill-tag">UAT Planning</span>
-                            <span class="skill-tag">Cross-Functional Collaboration</span>
-                            <span class="skill-tag">Requirement Gathering</span>
-                            <span class="skill-tag">End-to-End Delivery</span>
+            <!-- Enhanced Skills Section -->
+            <section id="skills" class="skills-showcase">
+                <h2>🚀 Core Skills & Expertise</h2>
+                <div class="skills-gallery">
+                    <div class="skill-showcase-item">
+                        <div class="skill-icon">📊</div>
+                        <div class="skill-showcase-title">Program Leadership</div>
+                        <div class="skill-showcase-description">
+                            Leading cross-functional teams and delivering complex projects with precision and excellence.
+                        </div>
+                        <div class="skill-tags-enhanced">
+                            <span class="skill-tag-enhanced">Agile & Scrum</span>
+                            <span class="skill-tag-enhanced">UAT Planning</span>
+                            <span class="skill-tag-enhanced">Cross-Functional Collaboration</span>
+                            <span class="skill-tag-enhanced">Requirement Gathering</span>
+                            <span class="skill-tag-enhanced">End-to-End Delivery</span>
                         </div>
                     </div>
-                    <div class="skill-category">
-                        <h3>Process Excellence</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Lean/Six Sigma</span>
-                            <span class="skill-tag">Process Optimization</span>
-                            <span class="skill-tag">Defect Management</span>
-                            <span class="skill-tag">Risk Mitigation</span>
-                            <span class="skill-tag">Continuous Improvement</span>
+
+                    <div class="skill-showcase-item">
+                        <div class="skill-icon">⚙️</div>
+                        <div class="skill-showcase-title">Process Excellence</div>
+                        <div class="skill-showcase-description">
+                            Optimizing workflows and implementing best practices for maximum efficiency and quality.
+                        </div>
+                        <div class="skill-tags-enhanced">
+                            <span class="skill-tag-enhanced">Lean/Six Sigma</span>
+                            <span class="skill-tag-enhanced">Process Optimization</span>
+                            <span class="skill-tag-enhanced">Defect Management</span>
+                            <span class="skill-tag-enhanced">Risk Mitigation</span>
+                            <span class="skill-tag-enhanced">Continuous Improvement</span>
                         </div>
                     </div>
-                    <div class="skill-category">
-                        <h3>Data & Reporting</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Power BI</span>
-                            <span class="skill-tag">Tableau</span>
-                            <span class="skill-tag">SQL</span>
-                            <span class="skill-tag">Advanced Excel</span>
-                            <span class="skill-tag">KPI Reporting</span>
+
+                    <div class="skill-showcase-item">
+                        <div class="skill-icon">📈</div>
+                        <div class="skill-showcase-title">Data & Analytics</div>
+                        <div class="skill-showcase-description">
+                            Transforming raw data into actionable insights through advanced analytics and visualization.
+                        </div>
+                        <div class="skill-tags-enhanced">
+                            <span class="skill-tag-enhanced">Power BI</span>
+                            <span class="skill-tag-enhanced">Tableau</span>
+                            <span class="skill-tag-enhanced">SQL</span>
+                            <span class="skill-tag-enhanced">Advanced Excel</span>
+                            <span class="skill-tag-enhanced">KPI Reporting</span>
                         </div>
                     </div>
-                    <div class="skill-category">
-                        <h3>Tools & Technology</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">JIRA</span>
-                            <span class="skill-tag">Confluence</span>
-                            <span class="skill-tag">Core Java</span>
-                            <span class="skill-tag">HTML/CSS</span>
-                            <span class="skill-tag">JavaScript</span>
+
+                    <div class="skill-showcase-item">
+                        <div class="skill-icon">💻</div>
+                        <div class="skill-showcase-title">Technical Expertise</div>
+                        <div class="skill-showcase-description">
+                            Leveraging cutting-edge tools and technologies to deliver innovative solutions.
+                        </div>
+                        <div class="skill-tags-enhanced">
+                            <span class="skill-tag-enhanced">JIRA</span>
+                            <span class="skill-tag-enhanced">Confluence</span>
+                            <span class="skill-tag-enhanced">Core Java</span>
+                            <span class="skill-tag-enhanced">HTML/CSS</span>
+                            <span class="skill-tag-enhanced">JavaScript</span>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section id="experience">
-                <h2>Professional Experience</h2>
-                
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">UAT Lead - Just Eat Take Away Project</div>
-                            <div class="company">Phenom, Hyderabad, India</div>
+            <!-- Enhanced Experience Section -->
+            <section id="experience" class="experience-showcase">
+                <h2>💼 Professional Journey</h2>
+                <div class="experience-timeline">
+                    <div class="experience-showcase-item">
+                        <div class="experience-header">
+                            <div>
+                                <div class="experience-title">UAT Lead - Just Eat Take Away Project</div>
+                                <div class="experience-company">Phenom, Hyderabad, India</div>
+                            </div>
+                            <div class="experience-duration">Dec 2024 - Present</div>
                         </div>
-                        <div class="duration">Dec 2024 - Present</div>
+                        <ul class="experience-achievements">
+                            <li>Directed <span class="stat">end-to-end UAT lifecycle</span> for global food delivery platform, ensuring <span class="stat">100% readiness</span> for one-locale go-live and planning rollout to <span class="stat">12 locales within 3 months</span></li>
+                            <li>Improved defect turnaround by <span class="stat">25%</span> through JIRA dashboard automation and proactive issue triaging</li>
+                            <li>Built <span class="stat">real-time Power BI dashboards</span>, enhancing executive decision-making speed by <span class="stat">30%</span></li>
+                            <li>Delivered <span class="stat">0% escalation</span> rate and <span class="stat">100% on-time milestones</span>, earning recognition from client directors and senior leadership</li>
+                        </ul>
                     </div>
-                    <ul class="achievements">
-                        <li>Directed <span class="stat">end-to-end UAT lifecycle</span> for global food delivery platform, ensuring <span class="stat">100% readiness</span> for one-locale go-live and planning rollout to <span class="stat">12 locales within 3 months</span></li>
-                        <li>Improved defect turnaround by <span class="stat">25%</span> through JIRA dashboard automation and proactive issue triaging</li>
-                        <li>Built <span class="stat">real-time Power BI dashboards</span>, enhancing executive decision-making speed by <span class="stat">30%</span></li>
-                        <li>Delivered <span class="stat">0% escalation</span> rate and <span class="stat">100% on-time milestones</span>, earning recognition from client directors and senior leadership</li>
-                    </ul>
-                </div>
 
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">UI Software Engineer</div>
-                            <div class="company">Phenom, Hyderabad, India</div>
+                    <div class="experience-showcase-item">
+                        <div class="experience-header">
+                            <div>
+                                <div class="experience-title">UI Software Engineer</div>
+                                <div class="experience-company">Phenom, Hyderabad, India</div>
+                            </div>
+                            <div class="experience-duration">Aug 2024 - Dec 2024</div>
                         </div>
-                        <div class="duration">Aug 2024 - Dec 2024</div>
+                        <ul class="experience-achievements">
+                            <li>Resolved <span class="stat">250+ Jira tickets</span> in 4 months with <span class="stat">100% on-time delivery</span> and <span class="stat">0% escalation</span></li>
+                            <li>Reduced backlog by <span class="stat">35%</span> through targeted UI issue resolution in collaboration with product, QA, and engineering teams</li>
+                        </ul>
                     </div>
-                    <ul class="achievements">
-                        <li>Resolved <span class="stat">250+ Jira tickets</span> in 4 months with <span class="stat">100% on-time delivery</span> and <span class="stat">0% escalation</span></li>
-                        <li>Reduced backlog by <span class="stat">35%</span> through targeted UI issue resolution in collaboration with product, QA, and engineering teams</li>
-                    </ul>
-                </div>
 
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Module Lead - Quartz Survelines</div>
-                            <div class="company">Tata Consultancy Services (TCS), Chennai, India</div>
+                    <div class="experience-showcase-item">
+                        <div class="experience-header">
+                            <div>
+                                <div class="experience-title">Module Lead - Quartz Survelines</div>
+                                <div class="experience-company">Tata Consultancy Services (TCS), Chennai, India</div>
+                            </div>
+                            <div class="experience-duration">Jan 2023 - Aug 2024</div>
                         </div>
-                        <div class="duration">Jan 2023 - Aug 2024</div>
+                        <ul class="experience-achievements">
+                            <li>Led module delivery for enterprise dashboards, reducing manual reporting time by <span class="stat">40%</span> via SQL automation</li>
+                            <li>Achieved <span class="stat">99% defect resolution</span> within sprint cycles by implementing Agile quality gates and proactive risk management</li>
+                            <li>Shortened client feedback loops by <span class="stat">20%</span> through early-stage UAT and production demos</li>
+                            <li>Awarded <span class="stat">On-the-Spot</span> and <span class="stat">Star of the Month</span> within first 8 months for high-impact delivery</li>
+                        </ul>
                     </div>
-                    <ul class="achievements">
-                        <li>Led module delivery for enterprise dashboards, reducing manual reporting time by <span class="stat">40%</span> via SQL automation</li>
-                        <li>Achieved <span class="stat">99% defect resolution</span> within sprint cycles by implementing Agile quality gates and proactive risk management</li>
-                        <li>Shortened client feedback loops by <span class="stat">20%</span> through early-stage UAT and production demos</li>
-                        <li>Awarded <span class="stat">On-the-Spot</span> and <span class="stat">Star of the Month</span> within first 8 months for high-impact delivery</li>
-                    </ul>
-                </div>
 
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Developer</div>
-                            <div class="company">Tata Consultancy Services (TCS), Chennai, India</div>
+                    <div class="experience-showcase-item">
+                        <div class="experience-header">
+                            <div>
+                                <div class="experience-title">Developer</div>
+                                <div class="experience-company">Tata Consultancy Services (TCS), Chennai, India</div>
+                            </div>
+                            <div class="experience-duration">Feb 2022 - Jan 2023</div>
                         </div>
-                        <div class="duration">Feb 2022 - Jan 2023</div>
+                        <ul class="experience-achievements">
+                            <li>Built POJO classes integrated with SQL databases, improving query efficiency by <span class="stat">15%</span></li>
+                            <li>Maintained <span class="stat">99.9% database accuracy</span> across multiple production deployments</li>
+                        </ul>
                     </div>
-                    <ul class="achievements">
-                        <li>Built POJO classes integrated with SQL databases, improving query efficiency by <span class="stat">15%</span></li>
-                        <li>Maintained <span class="stat">99.9% database accuracy</span> across multiple production deployments</li>
-                    </ul>
-                </div>
 
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Associate Engineer</div>
-                            <div class="company">T & AS, Hyderabad, India</div>
+                    <div class="experience-showcase-item">
+                        <div class="experience-header">
+                            <div>
+                                <div class="experience-title">Associate Engineer</div>
+                                <div class="experience-company">T & AS, Hyderabad, India</div>
+                            </div>
+                            <div class="experience-duration">Sep 2021 - Feb 2022</div>
                         </div>
-                        <div class="duration">Sep 2021 - Feb 2022</div>
+                        <ul class="experience-achievements">
+                            <li>Automated order processing with SQL queries, achieving <span class="stat">100% accuracy</span> and reducing processing time by <span class="stat">25%</span></li>
+                            <li>Delivered front-end enhancements in HTML, CSS, and JavaScript, improving UX metrics by <span class="stat">15%</span></li>
+                        </ul>
                     </div>
-                    <ul class="achievements">
-                        <li>Automated order processing with SQL queries, achieving <span class="stat">100% accuracy</span> and reducing processing time by <span class="stat">25%</span></li>
-                        <li>Delivered front-end enhancements in HTML, CSS, and JavaScript, improving UX metrics by <span class="stat">15%</span></li>
-                    </ul>
                 </div>
             </section>
 
             <section id="projects">
-                <h2>Key Projects</h2>
-                
-                <div class="project-item">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Just Eat Take Away - UAT & Multi-Locale Rollout</div>
-                            <div class="company">Phenom, 2024-2025</div>
+                <!-- Project Gallery Section -->
+                <div class="project-gallery">
+                    <h3>📊 Project Showcase</h3>
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <div class="gallery-image">
+                                <img src="pic1.png" alt="Just Eat Take Away Dashboard" onerror="this.style.display='none'">
+                            </div>
+                            <div class="gallery-content">
+                                <div class="gallery-title">Just Eat Take Away - UAT & Multi-Locale Rollout</div>
+                                <div class="experience-company">Phenom, 2024-2025</div>
+                                <div class="project-skills">
+                                    <span class="project-skill">Power BI</span>
+                                    <span class="project-skill">SQL</span>
+                                    <span class="project-skill">Excel</span>
+                                    <span class="project-skill">JIRA</span>
+                                </div>
+                                <ul class="achievements">
+                                    <li>Managed <span class="stat">UAT strategy and execution</span> for global rollout; scaled US/EN locale into <span class="stat">12 new locales</span> in 3 months</li>
+                                    <li>Increased defect resolution efficiency by <span class="stat">25%</span> through automated dashboards</li>
+                                    <li>Maintained <span class="stat">0% escalation</span>, earning <span class="stat">client leadership recognition</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="gallery-item">
+                            <div class="gallery-image">
+                                <img src="img1.jpeg" alt="Enterprise Data Analytics Platform" onerror="this.style.display='none'">
+                            </div>
+                            <div class="gallery-content">
+                                <div class="gallery-title">Enterprise Data Analytics Platform</div>
+                                 <div class="project-skills">
+                                    <span class="project-skill">Power BI</span>
+                                    <span class="project-skill">SQL</span>
+                                    <span class="project-skill">Excel</span>
+                                    <span class="project-skill">JIRA</span>
+                                </div>
+                                <ul class="achievements">
+                                    <li>Designed and implemented comprehensive data analytics solution using <span class="stat">SQL optimization</span> and <span class="stat">Power BI visualization</span></li>
+                                    <li>Reduced report generation time by <span class="stat">60%</span> through advanced Excel automation and SQL query optimization</li>
+                                    <li>Enhanced data accuracy by <span class="stat">95%</span> through robust data validation and cleansing processes</li>
+                                    <li>Delivered executive dashboards serving <span class="stat">500+ stakeholders</span> with real-time KPI monitoring</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    <ul class="achievements">
-                        <li>Managed <span class="stat">UAT strategy and execution</span> for global rollout; scaled US/EN locale into <span class="stat">12 new locales</span> in 3 months</li>
-                        <li>Increased defect resolution efficiency by <span class="stat">25%</span> through automated dashboards</li>
-                        <li>Maintained <span class="stat">0% escalation</span>, earning <span class="stat">client leadership recognition</span></li>
-                    </ul>
-                </div>
 
-                <div class="project-item">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Quartz Survelines - Dashboard Automation</div>
-                            <div class="company">TCS, 2023-2024</div>
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <div class="gallery-image">
+                                <img src="img2.jpeg" alt="Financial Reporting System" onerror="this.style.display='none'">
+                            </div>
+                            <div class="gallery-content">
+                                <div class="gallery-title">Financial Reporting Automation</div>
+                                 <div class="project-skills">
+                                    <span class="project-skill">Power BI</span>
+                                    <span class="project-skill">SQL</span>
+                                    <span class="project-skill">Excel</span>
+                                    <span class="project-skill">JIRA</span>
+                                </div>
+                                <ul class="achievements">
+                                    <li>Automated monthly financial reporting using <span class="stat">SQL data extraction</span> and <span class="stat">Power BI transformations</span></li>
+                                    <li>Eliminated <span class="stat">80 hours</span> of manual work per month through Excel VBA macros and SQL automation</li>
+                                    <li>Improved reporting accuracy by <span class="stat">99.5%</span> through standardized data validation frameworks</li>
+                                    <li>Deployed scalable solution across <span class="stat">5 departments</span> with consistent reporting standards</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="gallery-item">
+                            <div class="gallery-image">
+                                <img src="img3.jpeg" alt="Quality Assurance Platform" onerror="this.style.display='none'">
+                            </div>
+                            <div class="gallery-content">
+                                <div class="gallery-title">QA Optimization Platform</div>
+                                <div class="project-skills">
+                                    <span class="project-skill">Power BI</span>
+                                    <span class="project-skill">SQL</span>
+                                    <span class="project-skill">Excel</span>
+                                    <span class="project-skill">JIRA</span>
+                                </div>
+                                <ul class="achievements">
+                                    <li>Built comprehensive QA tracking system using <span class="stat">SQL databases</span> and <span class="stat">Power BI analytics</span></li>
+                                    <li>Reduced defect identification time by <span class="stat">45%</span> through automated Excel reporting and real-time monitoring</li>
+                                    <li>Achieved <span class="stat">98% test coverage</span> across all modules with systematic tracking and validation</li>
+                                    <li>Implemented cross-team collaboration framework supporting <span class="stat">15+ team members</span> with unified reporting</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    <ul class="achievements">
-                        <li>Automated KPI reporting, reducing manual effort by <span class="stat">40%</span></li>
-                        <li>Achieved <span class="stat">99% defect closure</span> rate by enforcing structured Agile sprint tracking</li>
-                    </ul>
+
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <div class="gallery-content">
+                                <div class="gallery-title">Quartz Survelines - Dashboard Automation</div>
+                                <div class="experience-company">TCS, 2023-2024</div>
+                                <div class="project-skills">
+                                    <span class="project-skill">SQL</span>
+                                    <span class="project-skill">Power BI</span>
+                                    <span class="project-skill">Excel</span>
+                                    <span class="project-skill">Tableau</span>
+                                </div>
+                                <ul class="achievements">
+                                    <li>Automated KPI reporting, reducing manual effort by <span class="stat">40%</span></li>
+                                    <li>Achieved <span class="stat">99% defect closure</span> rate by enforcing structured Agile sprint tracking</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
-            <section id="awards">
-                <h2>Awards & Recognition</h2>
-                <div class="awards-grid">
-                    <div class="award-item">
-                        <div class="award-title">Client & Leadership Recognition</div>
-                        <div class="award-description">For 0% escalation and 100% on-time delivery in Just Eat Take Away UAT Project (Phenom, 2024-2025)</div>
+            <!-- Enhanced Awards Section -->
+            <section id="awards" class="awards-showcase">
+                <h2>🏆 Awards & Recognition</h2>
+                <div class="awards-gallery">
+                    <div class="award-showcase-item">
+                        <div class="award-trophy">🎯</div>
+                        <div class="award-showcase-title">Client & Leadership Recognition</div>
+                        <div class="award-showcase-description">For 0% escalation and 100% on-time delivery in Just Eat Take Away UAT Project (Phenom, 2024-2025)</div>
                     </div>
-                    <div class="award-item">
-                        <div class="award-title">On-the-Spot Award</div>
-                        <div class="award-description">For exceptional stakeholder management and program delivery (TCS, 2023)</div>
+                    
+                    <div class="award-showcase-item">
+                        <div class="award-trophy">⚡</div>
+                        <div class="award-showcase-title">On-the-Spot Award</div>
+                        <div class="award-showcase-description">For exceptional stakeholder management and program delivery (TCS, 2023)</div>
                     </div>
-                    <div class="award-item">
-                        <div class="award-title">Star of the Month</div>
-                        <div class="award-description">For 99% defect resolution and operational excellence in module delivery (TCS, 2023)</div>
+                    
+                    <div class="award-showcase-item">
+                        <div class="award-trophy">⭐</div>
+                        <div class="award-showcase-title">Star of the Month</div>
+                        <div class="award-showcase-description">For 99% defect resolution and operational excellence in module delivery (TCS, 2023)</div>
                     </div>
                 </div>
             </section>
 
-            <section id="education">
-                <h2>Education</h2>
-                <div class="education-item">
-                    <div class="degree">M.Tech, Computer Science Engineering</div>
-                    <div class="institution">Pragati Engineering College, Surampalem, Kakinada</div>
-                    <div>2022 - 2024</div>
-                    <span class="cgpa">CGPA: 8.12</span>
+            <!-- Enhanced Education Section -->
+            <section id="education" class="education-showcase">
+                <h2>🎓 Education</h2>
+                <div class="education-gallery">
+                    <div class="education-showcase-item">
+                        <div class="education-icon">🎓</div>
+                        <div class="education-degree">M.Tech, Computer Science Engineering</div>
+                        <div class="education-institution">Pragati Engineering College, Surampalem, Kakinada</div>
+                        <div class="education-duration">2022 - 2024</div>
+                        <div class="education-cgpa">CGPA: 8.12</div>
+                    </div>
                 </div>
             </section>
         </main>
@@ -1120,12 +1692,10 @@
             </div>
             <p>&copy; 2025 Pavan Anand Bokka. All rights reserved.</p>
         </footer>
-
-        <button class="scroll-top" onclick="scrollToTop()">↑</button>
     </div>
 
     <script>
-        // Smooth scrolling for navigation links
+        // Smooth scrolling for navigation links with exact positioning
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1137,9 +1707,13 @@
                         navLinks.classList.remove('active');
                     }
                     
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                    // Calculate the exact position to stop at the section heading
+                    const navHeight = document.querySelector('nav').offsetHeight;
+                    const targetPosition = target.offsetTop - navHeight - 50; // 50px extra padding to show heading clearly
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
                     });
                 }
             });
@@ -1184,155 +1758,240 @@
             document.body.classList.add('loaded');
         });
 
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+        // Initialize animations and interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            // Intersection Observer for animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
 
-        const observer = new IntersectionObserver(function(entries) {
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Set initial states for animation
+            const animatedElements = document.querySelectorAll('.skill-showcase-item, .experience-showcase-item, .award-showcase-item, .education-showcase-item, .summary-enhanced');
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'all 0.8s ease';
+                observer.observe(el);
+            });
+
+            // Counter animation for stats
+            function animateCounter(element, target, duration = 2000) {
+                let start = 0;
+                const increment = target / (duration / 16);
+                
+                function updateCounter() {
+                    start += increment;
+                    if (start < target) {
+                        element.textContent = Math.floor(start);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        element.textContent = target;
+                    }
+                }
+                updateCounter();
+            }
+
+            // Stats animation observer
+            const statsObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const statText = entry.target.textContent;
+                        const numbers = statText.match(/\d+/g);
+                        if (numbers) {
+                            const targetNumber = parseInt(numbers[0]);
+                            if (targetNumber > 1) {
+                                // Store original text
+                                const originalText = entry.target.textContent;
+                                entry.target.dataset.originalText = originalText;
+                                
+                                // Animate counter
+                                let currentNumber = 0;
+                                const increment = Math.ceil(targetNumber / 50);
+                                const interval = setInterval(() => {
+                                    currentNumber += increment;
+                                    if (currentNumber >= targetNumber) {
+                                        entry.target.textContent = originalText;
+                                        clearInterval(interval);
+                                    } else {
+                                        entry.target.textContent = originalText.replace(targetNumber, currentNumber);
+                                    }
+                                }, 40);
+                            }
+                        }
+                        statsObserver.unobserve(entry.target);
+                    }
+                });
+            });
+
+            // Observe stat elements
+            document.querySelectorAll('.stat').forEach(stat => {
+                statsObserver.observe(stat);
+            });
+
+            // Enhanced hover effects for skill tags
+            document.querySelectorAll('.skill-tag-enhanced').forEach(tag => {
+                tag.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.15) rotate(5deg)';
+                    this.style.boxShadow = '0 8px 20px rgba(52, 73, 94, 0.5)';
+                });
+                
+                tag.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1) rotate(0deg)';
+                    this.style.boxShadow = '';
+                });
+            });
+
+            // Skill icon rotation on hover
+            document.querySelectorAll('.skill-showcase-item').forEach(item => {
+                const icon = item.querySelector('.skill-icon');
+                item.addEventListener('mouseenter', function() {
+                    icon.style.transform = 'rotate(360deg) scale(1.1)';
+                    icon.style.boxShadow = '0 10px 30px rgba(231, 76, 60, 0.4)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    icon.style.transform = 'rotate(0deg) scale(1)';
+                    icon.style.boxShadow = '';
+                });
+            });
+
+            // Award trophy animation on hover
+            document.querySelectorAll('.award-showcase-item').forEach(item => {
+                const trophy = item.querySelector('.award-trophy');
+                item.addEventListener('mouseenter', function() {
+                    trophy.style.animation = 'none';
+                    trophy.offsetHeight; // Trigger reflow
+                    trophy.style.animation = 'bounce 0.6s ease-in-out';
+                });
+            });
+
+            // Education icon hover effect
+            document.querySelectorAll('.education-showcase-item').forEach(item => {
+                const icon = item.querySelector('.education-icon');
+                item.addEventListener('mouseenter', function() {
+                    icon.style.animation = 'spin 1s ease-in-out';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    icon.style.animation = '';
+                });
+            });
+
+            // Add dynamic background gradient animation
+            let gradientAngle = 135;
+            setInterval(() => {
+                gradientAngle = (gradientAngle + 1) % 360;
+                document.body.style.background = `linear-gradient(${gradientAngle}deg, #667eea 0%, #764ba2 100%)`;
+            }, 100);
+
+            // Add floating particles effect
+            function createParticle() {
+                const particle = document.createElement('div');
+                particle.style.cssText = `
+                    position: fixed;
+                    width: 4px;
+                    height: 4px;
+                    background: rgba(255, 255, 255, 0.6);
+                    border-radius: 50%;
+                    pointer-events: none;
+                    left: ${Math.random() * 100}%;
+                    top: 100%;
+                    animation: floatUp 8s linear forwards;
+                    z-index: 1;
+                `;
+                
+                document.body.appendChild(particle);
+                
+                setTimeout(() => {
+                    particle.remove();
+                }, 8000);
+            }
+
+            // Create particles periodically
+            setInterval(createParticle, 800);
+
+            // Add keyboard navigation support
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Tab') {
+                    document.body.classList.add('using-keyboard');
+                }
+            });
+
+            document.addEventListener('mousedown', function() {
+                document.body.classList.remove('using-keyboard');
+            });
+
+            // Fixed profile photo click functionality
+            document.querySelector('.profile-photo-fixed').addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Gallery item hover effects
+            document.querySelectorAll('.gallery-item').forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.02)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+
+            // Add click effect to contact items
+            document.querySelectorAll('.contact-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 150);
+                });
+            });
+
+            // Add error handling for failed animations
+            window.addEventListener('error', function(e) {
+                console.warn('Animation error handled:', e.error);
+            });
+
+            console.log('🚀 Complete Enhanced Portfolio Loaded Successfully!');
+            console.log('✅ All sections with gallery-style designs are ready');
+            console.log('🎨 Responsive design active for all screen sizes');
+            console.log('♿ Full accessibility features enabled');
+            console.log('⚡ Interactive animations and effects loaded');
+        });
+
+        // Observe all sections for fade-in animation
+        const sectionObserver = new IntersectionObserver(function(entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.style.opacity = '1';
                     entry.target.style.transform = 'translateY(0)';
                 }
             });
-        }, observerOptions);
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
 
         // Observe all sections
         document.querySelectorAll('section').forEach(section => {
-            observer.observe(section);
+            sectionObserver.observe(section);
         });
-        
-        // Start typing effect after a delay
-        setTimeout(typeWriter, 1000);
-
-        // Add hover effects to skill tags
-        document.querySelectorAll('.skill-tag').forEach(tag => {
-            tag.addEventListener('mouseenter', function() {
-                this.style.transform = 'scale(1.05) rotate(2deg)';
-            });
-            
-            tag.addEventListener('mouseleave', function() {
-                this.style.transform = 'scale(1) rotate(0deg)';
-            });
-        });
-
-        // Add click effect to contact items
-        document.querySelectorAll('.contact-item').forEach(item => {
-            item.addEventListener('click', function() {
-                this.style.transform = 'scale(0.95)';
-                setTimeout(() => {
-                    this.style.transform = 'scale(1)';
-                }, 150);
-            });
-        });
-
-        // Add counter animation for stats
-        function animateCounter(element, target, duration = 2000) {
-            let start = 0;
-            const increment = target / (duration / 16);
-            
-            function updateCounter() {
-                start += increment;
-                if (start < target) {
-                    element.textContent = Math.floor(start);
-                    requestAnimationFrame(updateCounter);
-                } else {
-                    element.textContent = target;
-                }
-            }
-            updateCounter();
-        }
-
-        // Initialize counter animations when stats come into view
-        const statsObserver = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const statText = entry.target.textContent;
-                    const numbers = statText.match(/\d+/g);
-                    if (numbers) {
-                        // Animate the first number found
-                        const targetNumber = parseInt(numbers[0]);
-                        if (targetNumber > 1) {
-                            animateCounter(entry.target, targetNumber);
-                        }
-                    }
-                    statsObserver.unobserve(entry.target);
-                }
-            });
-        });
-
-        // Observe stat elements
-        document.querySelectorAll('.stat').forEach(stat => {
-            statsObserver.observe(stat);
-        });
-
-        // Add glitch effect to nav links on hover
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('mouseenter', function() {
-                let originalText = this.textContent;
-                let iterations = 0;
-                
-                const glitchInterval = setInterval(() => {
-                    this.textContent = originalText
-                        .split('')
-                        .map((char, index) => {
-                            if (index < iterations) {
-                                return originalText[index];
-                            }
-                            return String.fromCharCode(33 + Math.floor(Math.random() * 94));
-                        })
-                        .join('');
-                    
-                    if (iterations >= originalText.length) {
-                        clearInterval(glitchInterval);
-                        this.textContent = originalText;
-                    }
-                    
-                    iterations += 1/3;
-                }, 30);
-            });
-        });
-
-        // Add particle effect to header
-        function createParticle() {
-            const particle = document.createElement('div');
-            particle.style.position = 'absolute';
-            particle.style.width = '2px';
-            particle.style.height = '2px';
-            particle.style.background = 'rgba(255, 255, 255, 0.5)';
-            particle.style.borderRadius = '50%';
-            particle.style.left = Math.random() * 100 + '%';
-            particle.style.top = '100%';
-            particle.style.pointerEvents = 'none';
-            particle.style.animation = 'float 6s linear infinite';
-            
-            document.querySelector('header').appendChild(particle);
-            
-            setTimeout(() => {
-                particle.remove();
-            }, 6000);
-        }
-
-        // Add CSS for particle animation
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes float {
-                to {
-                    transform: translateY(-100vh) rotate(360deg);
-                    opacity: 0;
-                }
-            }
-        `;
-        document.head.appendChild(style);
-
-        // Create particles periodically
-        setInterval(createParticle, 500);
 
         // Add progressive enhancement for reduced motion
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            // Disable animations for users who prefer reduced motion
             const style = document.createElement('style');
             style.textContent = `
                 *, *::before, *::after {
@@ -1343,36 +2002,6 @@
             `;
             document.head.appendChild(style);
         }
-
-        // Add keyboard navigation support
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Tab') {
-                document.body.classList.add('using-keyboard');
-            }
-        });
-
-        document.addEventListener('mousedown', function(e) {
-            document.body.classList.remove('using-keyboard');
-        });
-
-        // Add focus styles for keyboard navigation
-        const keyboardStyle = document.createElement('style');
-        keyboardStyle.textContent = `
-            .using-keyboard *:focus {
-                outline: 2px solid #3498db !important;
-                outline-offset: 2px !important;
-            }
-        `;
-        document.head.appendChild(keyboardStyle);
-
-        // Fixed profile photo click functionality
-        document.querySelector('.profile-photo-fixed').addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
     </script>
 </body>
-
 </html>
